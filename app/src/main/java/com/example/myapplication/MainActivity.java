@@ -11,24 +11,29 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
-    private FrameLayout myFrame;
+    private FrameLayout myFrame1;
+    private FrameLayout myFrame2;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+            myFrame1.setVisibility(FrameLayout.INVISIBLE);
+            myFrame2.setVisibility(FrameLayout.INVISIBLE);
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     mTextMessage.setText(R.string.title_home);
                     return true;
                 case R.id.navigation_dashboard:
                     mTextMessage.setText(R.string.title_dashboard);
-                    myFrame.setVisibility(FrameLayout.VISIBLE);
+                    myFrame1.setVisibility(FrameLayout.VISIBLE);
 
                     return true;
                 case R.id.navigation_notifications:
                     mTextMessage.setText(R.string.title_notifications);
+                    myFrame2.setVisibility(FrameLayout.VISIBLE);
                     return true;
             }
             return false;
@@ -44,7 +49,8 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        myFrame = findViewById(R.id.frame);
+        myFrame1 = findViewById(R.id.frame1);
+        myFrame2 = findViewById(R.id.frame2);
     }
 
 }
