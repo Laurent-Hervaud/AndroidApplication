@@ -5,10 +5,12 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView mTextMessage;
     private FrameLayout myFrame1;
@@ -40,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,8 +52,22 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
+        Button mClickButton1 = (Button)findViewById(R.id.button1);
+        mClickButton1.setOnClickListener(this);
+
         myFrame1 = findViewById(R.id.frame1);
         myFrame2 = findViewById(R.id.frame2);
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case  R.id.button1: {
+                mTextMessage.setText("click bouton");
+                break;
+            }
+
+            //.... etc
+        }
+    }
 }
