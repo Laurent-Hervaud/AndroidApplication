@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -55,6 +56,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button mClickButton1 = (Button)findViewById(R.id.button1);
         mClickButton1.setOnClickListener(this);
 
+        ImageButton mClickImgButton1 = (ImageButton)findViewById(R.id.imagebt1);
+        mClickImgButton1.setOnClickListener(this);
+
         myFrame1 = findViewById(R.id.frame1);
         myFrame2 = findViewById(R.id.frame2);
     }
@@ -66,7 +70,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 mTextMessage.setText("click bouton");
                 break;
             }
-
+            case  R.id.imagebt1: {
+                mTextMessage.setText("click image bouton");
+                break;
+            }
             //.... etc
         }
     }

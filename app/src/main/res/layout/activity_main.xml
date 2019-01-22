@@ -44,6 +44,15 @@
             android:text="Button1"
             android:layout_gravity="center"
             />
+
+            <ImageButton
+                android:id="@+id/imagebt1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:src="@mipmap/ic_launcher"
+                android:text="ImageButton1"
+                android:visibility="visible" />
         </FrameLayout>
 
         <FrameLayout
